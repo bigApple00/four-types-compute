@@ -24,4 +24,34 @@ public int produceNumber1() {//产生被除数
 		random_number_x=random.nextInt(100)+1;
 		return random_number_x;
 	}
+
+public int produceNumber2() {//产生除数
+		
+		int random_number_y;
+		random_number_y=random.nextInt(100)+1;
+		return random_number_y;
+	}
+
+
+public boolean underHundred() {//结果小于一百
+		
+		if(x+y>100||x*y>100) {
+			return false;
+		}
+		else 
+			return true;
+		
+	}
+
+
+public boolean bigSubtractsmall() {//大减小
+		if(x-y<0) {
+			return false;
+		}
+		else {
+			return true;
+		}
+	}
+
+
 	
