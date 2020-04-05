@@ -59,6 +59,59 @@ public boolean underHundred() {		//使加法结果小于一百
 		}
 	}
 
+	public void actionPerformed(ActionEvent a) {
+		int right_count=0;		//记录正确的个数
+		String char_string;
+		if(a.getSource()==b1) {
+			for(int i=0;i<10;i++) {
+				int j=0;
+				char_string=lab[i][j+1].getText();
+				
+				switch (char_string) {		//判断是哪一个运算符对应的算式
+				case "+":
+					try {		//Integer.parseInt该方法会抛出异常
+					if(Integer.parseInt(lab[i][j].getText().trim())+Integer.parseInt(lab[i][j+2].getText().trim())==Integer.parseInt(text[i].getText().trim()))
+					right_count++;
+					}catch (NumberFormatException e) {
+						e.printStackTrace();
+					}
+					break;
+					
+				case "-":
+					try {
+					if(Integer.parseInt(lab[i][j].getText().trim())-Integer.parseInt(lab[i][j+2].getText().trim())==Integer.parseInt(text[i].getText().trim()))
+					right_count++;
+					}catch (NumberFormatException e) {
+						e.printStackTrace();
+					}
+					break;
+					
+				case "*":
+					try {
+					if(Integer.parseInt(lab[i][j].getText().trim())*Integer.parseInt(lab[i][j+2].getText().trim())==Integer.parseInt(text[i].getText().trim()))
+					right_count++;
+					}catch (NumberFormatException e) {
+						e.printStackTrace();
+					}
+					break;
+					
+				case "/":
+					try {
+					if(Integer.parseInt(lab[i][j].getText().trim())/Integer.parseInt(lab[i][j+2].getText().trim())==Integer.parseInt(text[i].getText().trim()))
+					right_count++;
+					}catch (NumberFormatException e) {
+						e.printStackTrace();
+					}
+					break;
+	
+				}
+				
+			}
+			b1.setText("你答对了"+right_count+"题");			//最后评分输出到button上
+			
+		}
+	}
+
 
 	UI(){
 		int j=0;
