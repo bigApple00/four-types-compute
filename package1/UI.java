@@ -132,6 +132,7 @@ public boolean underHundred() {		//使加法结果小于一百
 		 add(b1);
 	}
 
+	
 	public static void main(String[] args) {
 		UI g=new UI();
 		g.setLayout(new FlowLayout(1,10,3));
